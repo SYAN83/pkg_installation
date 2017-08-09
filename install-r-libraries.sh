@@ -12,6 +12,10 @@ fi
 file=$1
 while IFS=: read -r f1 f2
 do
+    if [[ -z "$f1" ]]
+    then
+        continue
+    fi
     lib="/usr/lib64/R/library/$f1"
     echo $lib
     if [ -d $lib ]
@@ -25,8 +29,9 @@ do
             -c "R -e \"install.packages('$f1', repos='https://cran.rstudio.com/')\""
         else
 	    echo $f1:$f2
+            f3=${f2//'"'/'\"'}
             sudo su - \
-            -c "R -e \"$f2\""
+            -c "R -e \"$f3\""
         fi
     fi
 done <"$file"

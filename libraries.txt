@@ -1,3 +1,4 @@
 data.table
 devtools
 dplyr
+sparklyr:devtools::install_github("rstudio/sparklyr")
