@@ -1,4 +1,13 @@
 data.table
 devtools
 dplyr
-sparklyr:devtools::install_github("rstudio/sparklyr")
+tidyr
+leaflet:devtools::install_github("rstudio/leaflet")
+corrplot
+lubridate
+caret
+leaflet.extras:devtools::install_github('bhaskarvk/leaflet.extras')
+VIM
+gbm
+doMC
+randomForest
